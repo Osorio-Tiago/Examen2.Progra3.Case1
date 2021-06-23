@@ -21,7 +21,7 @@ public class Forecast extends WeatherDataDecorator{
         super.createFunctionality();
         System.out.println("\n");
         System.out.println("+=====+==========================+==========================+");
-        System.out.println("Con las funcionalidades de Forecast: ");
+        System.out.println("Forecast: ");
         System.out.println("Pronostico: ");
         
         System.out.println("Temperatura: " + forecast(temperatureRecord));       
