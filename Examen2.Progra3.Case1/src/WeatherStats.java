@@ -19,8 +19,8 @@ public class WeatherStats extends WeatherDataDecorator{
     @Override
     public void createFunctionality() {
         super.createFunctionality();
-        System.out.println("----------------------------------------------------");
-        System.out.println("Con las funcionalidades de WeatherStats: ");
+        System.out.println("+===================+");
+        System.out.println("WeatherStats: ");
         System.out.println("Estadisticas: ");
         
         System.out.println("Temperatura ");

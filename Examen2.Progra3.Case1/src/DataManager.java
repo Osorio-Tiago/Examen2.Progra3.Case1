@@ -25,10 +25,9 @@ public class DataManager implements Subject {
     public void notifyUpdate(double temperature, double humidity, double barometricPressure) {
     	
     	System.out.println("+==========Condiciones climáticas============+ \n");
-        System.out.println("[1]- Temperatura: " + temperature + "°");
-        System.out.println("[2]- Humedad: " + humidity);
-        System.out.println("[3]- Presion barometrica: " + barometricPressure);
-        System.out.println("----------------------------------------------------");
+        System.out.println("[1]- Temperatura: " + temperature + "°C");
+        System.out.println("[2]- Humedad: " + humidity + " H");
+        System.out.println("[3]- Presion barometrica: \n" + barometricPressure);
         observers.forEach((o) -> {
             o.update(temperature, humidity, barometricPressure);
         });

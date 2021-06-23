@@ -20,13 +20,13 @@ public class Forecast extends WeatherDataDecorator{
     public void createFunctionality() {
         super.createFunctionality();
         System.out.println("\n");
-        System.out.println("+=====+==========================+==========================+");
+        System.out.println("+=====+==========================+");
         System.out.println("Forecast: ");
-        System.out.println("Pronostico: ");
+        System.out.println("Pronóstico: ");
         
-        System.out.println("Temperatura: " + forecast(temperatureRecord));       
+        System.out.println("Temperatura: " + forecast(temperatureRecord) + "°C");       
         
-        System.out.println("Humedad: " + forecast(humidityRecord));      
+        System.out.println("Humedad: " + forecast(humidityRecord) +" H");      
      
         System.out.println("Presion Barometrica: " + forecast(barometricRecord));
         System.out.println("\n");

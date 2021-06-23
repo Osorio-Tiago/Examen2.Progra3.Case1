@@ -26,9 +26,10 @@ public class Main {
 	        
 	        dispositivo1.createFunctionality();
 	        
-	        System.out.println("----------------------------------------------------");
-	        System.out.println("Segundo set");
-	        System.out.println("----------------------------------------------------");
+	        System.out.println("               +======================+");
+	        System.out.println("               |     Segundo set      |");
+	        System.out.println("               +======================+");
+	        System.out.println("\n");
 	        
 	        dataManager.attach(dispositivoHibrido1);
 	        dataManager.attach(dispositivoHibrido2);
