@@ -4,14 +4,14 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-	        Observer dispositivo1 = new Forecast(new WeatherStats(new CurrentConditions(new WeatherData())));
+	        Observer dispositivoGeneral = new Forecast(new WeatherStats(new CurrentConditions(new WeatherData())));
 	        
-	        Observer dispositivoHibrido1 = new Forecast(new CurrentConditions(new WeatherData()));
-	        Observer dispositivoHibrido2 = new Forecast(new WeatherStats(new WeatherData()));
+	        Observer primerHibrido = new Forecast(new CurrentConditions(new WeatherData()));
+	        Observer segundoHibrido = new Forecast(new WeatherStats(new WeatherData()));
 	        
 	        
 	        DataManager dataManager = new DataManager();
-	        dataManager.attach(dispositivo1);
+	        dataManager.attach(dispositivoGeneral);
 	        
 	        System.out.println("               +======================+");
 	        System.out.println("               |      Primer set      |");
@@ -24,15 +24,15 @@ public class Main {
 	        
 	        
 	        
-	        dispositivo1.createFunctionality();
+	        dispositivoGeneral.createFunctionality();
 	        
 	        System.out.println("               +======================+");
 	        System.out.println("               |     Segundo set      |");
 	        System.out.println("               +======================+");
 	        System.out.println("\n");
 	        
-	        dataManager.attach(dispositivoHibrido1);
-	        dataManager.attach(dispositivoHibrido2);
+	        dataManager.attach(primerHibrido);
+	        dataManager.attach(segundoHibrido);
 	        
 	        dataManager.notifyUpdate(52.40, 53.0, 10);
 	        dataManager.notifyUpdate(30, 57.20, 20);
@@ -40,17 +40,17 @@ public class Main {
 	        
 	        System.out.println("*---------------------------------------------");
 	        
-	        dispositivo1.createFunctionality();
+	        dispositivoGeneral.createFunctionality();
 	        System.out.println("*****************************************");
 	        System.out.println("|      Primer Dispositivo Híbrido       |");
 	        System.out.println("*****************************************");
-	        dispositivoHibrido1.createFunctionality();
+	        primerHibrido.createFunctionality();
 	        
 	        System.out.println("*---------------------------------------------\n");
 	        System.out.println("*****************************************");
 	        System.out.println("|Segundo Dispositivo Híbrido              |");
 	        System.out.println("*****************************************");
-	        dispositivoHibrido2.createFunctionality();
+	        segundoHibrido.createFunctionality();
 	    
 	}
 }
