@@ -15,12 +15,13 @@ public class CurrentConditions extends WeatherDataDecorator{
     @Override
     public void createFunctionality() {
         super.createFunctionality();
-        System.out.println("\n");
-        System.out.println("************************");
-        System.out.println("*Condiciones Actuales: *");
-        System.out.println("************************ \n");
-        System.out.println("\n");
-        this.condicionesActuales();
+        System.out.println("+=====+==================================+");
+        System.out.println("|Condiciones Actuales:                   |");
+        System.out.println("+=====+==================================+");
+        System.out.println("[1]-Temperatura: " + temperature + "°C");
+        System.out.println("[2]-Humedad: " + humidity + " H");
+        System.out.println("[3]-Presión Barométrica: " + barometricPressure);
+        System.out.println("+=====+==================================+ \n \n");
     }
 
     @Override
@@ -31,10 +32,5 @@ public class CurrentConditions extends WeatherDataDecorator{
         this.barometricPressure = barometricPressure;     
     }
     
-    public void condicionesActuales(){
-    	
-        System.out.println("[1]-Temperatura: " + temperature + "°C");
-        System.out.println("[2]-Humedad: " + humidity + " H");
-        System.out.println("[3]-Presión Barométrica: " + barometricPressure);
-    }
+    
 }

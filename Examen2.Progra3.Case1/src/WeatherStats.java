@@ -19,24 +19,26 @@ public class WeatherStats extends WeatherDataDecorator{
     @Override
     public void createFunctionality() {
         super.createFunctionality();
-        System.out.println("+===================+");
-        System.out.println("WeatherStats: ");
-        System.out.println("Estadisticas: ");
-        
-        System.out.println("Temperatura ");
+        System.out.println("+=====+==================================+");
+        System.out.println("|Estadísticas Meteorológicas             |");
+        System.out.println("+=====+==================================+");    
+        System.out.println("|[1]- Información Temperatura:           ");
         average(temperatureRecord);
         max(temperatureRecord);
         min(temperatureRecord);
+        System.out.println("|________________________________________");
         
-        System.out.println("Humedad ");
+        System.out.println("|[2]- Humedad                            ");
         average(humidityRecord);
         max(humidityRecord);
         min(humidityRecord);
+        System.out.println("|________________________________________");
         
-        System.out.println("Presion Barometrica ");
+        System.out.println("|[3]- Presion Barometrica                ");
         average(barometricRecord);
         max(barometricRecord);
         min(barometricRecord);
+        System.out.println("|________________________________________ \n");
     }
 
     @Override
@@ -58,7 +60,7 @@ public class WeatherStats extends WeatherDataDecorator{
                 max = record.get(i);            
         }
         
-        System.out.println("Maximo: " + max);
+        System.out.println("|Maximo: " + max);
     }
     
     public void min(List<Double> record){
@@ -72,7 +74,7 @@ public class WeatherStats extends WeatherDataDecorator{
                 min = record.get(i);            
         }
         
-        System.out.println("Minimo: " + min);
+        System.out.println("|Minimo: " + min);
     }
     
     public void average(List<Double> record){
@@ -82,6 +84,6 @@ public class WeatherStats extends WeatherDataDecorator{
             promedio += record.get(i);
         }
         
-        System.out.println("Promedio: " + promedio/record.size());
+        System.out.println("|Promedio: " + promedio/record.size());
     }
 }

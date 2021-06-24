@@ -38,10 +38,18 @@ public class Main {
 	        dataManager.notifyUpdate(30, 57.20, 20);
 	        dataManager.notifyUpdate(7.95, 7.02, 60);
 	        
+	        System.out.println("*---------------------------------------------");
+	        
 	        dispositivo1.createFunctionality();
-	        System.out.println("----------------------------------------------------");
+	        System.out.println("*****************************************");
+	        System.out.println("|      Primer Dispositivo Híbrido       |");
+	        System.out.println("*****************************************");
 	        dispositivoHibrido1.createFunctionality();
-	        System.out.println("----------------------------------------------------");
+	        
+	        System.out.println("*---------------------------------------------\n");
+	        System.out.println("*****************************************");
+	        System.out.println("|Segundo Dispositivo Híbrido              |");
+	        System.out.println("*****************************************");
 	        dispositivoHibrido2.createFunctionality();
 	    
 	}
