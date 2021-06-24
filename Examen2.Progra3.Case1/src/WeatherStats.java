@@ -3,7 +3,13 @@ import java.util.List;
 
 
 public class WeatherStats extends WeatherDataDecorator{
-    
+	
+/*
+ * La clase WeatherStats es una clase observadora en la cual tomaremos
+ * la data observada y procedemos a aplicar cálculos debido a su estado mediante
+ * diferentes métodos.
+ */
+	
     //Atributos
     
     private final List<Double> temperatureRecord = new ArrayList();
@@ -48,7 +54,13 @@ public class WeatherStats extends WeatherDataDecorator{
         humidityRecord.add(humidity);
         barometricRecord.add(barometricPressure);
     }
-    
+  
+/*
+ * El método máximo nos permite recorrer la lista de reportes compuesta por la 
+ * data observada y así sacar los valores más altos que la componen en cada
+ * característica.
+ * 
+ */    
     public void max(List<Double> record){
         double max = 0;
         
@@ -62,7 +74,12 @@ public class WeatherStats extends WeatherDataDecorator{
         
         System.out.println("|Maximo: " + max);
     }
-    
+/*
+ * El método mínimo nos permite recorrer la lista de reportes compuesta por la 
+ * data observada y así sacar los valores más bajos que la componen en cada
+ * característica.
+ * 
+ */     
     public void min(List<Double> record){
         double min = 0;
 
@@ -76,7 +93,12 @@ public class WeatherStats extends WeatherDataDecorator{
         
         System.out.println("|Minimo: " + min);
     }
-    
+/*
+ * El método average nos permite recorrer la lista de reportes compuesta por la 
+ * data observada y así sacar un promedio general de los valores que 
+ * la componen en cada elemento característico.
+ * 
+ */     
     public void average(List<Double> record){
         double promedio = 0;
         

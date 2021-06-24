@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* La clase Forecast es una clase observadora en la cual tomaremos
+ * la data observada y procedemos a aplicar cálculos debido a su estado mediante
+ * diferentes métodos.
+ * */
 
 public class Forecast extends WeatherDataDecorator{
     
@@ -37,6 +42,11 @@ public class Forecast extends WeatherDataDecorator{
         System.out.println("\n \n");
     }
 
+ // En este caso el método forecast nos permite sacar un promedio
+ // de los reportes obtenidos en cada elementos característicos a observar. 
+ // manipulandolos con una lista.
+    
+    
     public double forecast(List<Double> record){
         double pronostico = 0;
         
