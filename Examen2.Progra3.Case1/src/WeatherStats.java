@@ -6,9 +6,9 @@ public class WeatherStats extends WeatherDataDecorator{
     
     //Atributos
     
-    private final List<Double> temperatureRecord = new ArrayList();
-    private final List<Double> humidityRecord = new ArrayList();
-    private final List<Double> barometricRecord = new ArrayList();
+    private final List<Double> temperatureRecord = new ArrayList<Double>();
+    private final List<Double> humidityRecord = new ArrayList<Double>();
+    private final List<Double> barometricRecord = new ArrayList<Double>();
     
     //Metodos
     
@@ -47,41 +47,21 @@ public class WeatherStats extends WeatherDataDecorator{
         barometricRecord.add(barometricPressure);
     }
     
+    /*
+     * Utilizacion de expresiones lambda para calcular
+     * 
+     * Maximo - Minimo - Promedio
+     */
+    
     public void max(List<Double> record){
-        double max = 0;
-        
-        for(int i = 0; i < record.size(); i++){
-            if(max==0)
-                max = record.get(i);
-                
-            if(max<record.get(i))
-                max = record.get(i);            
-        }
-        
-        System.out.println("Maximo: " + max);
+    	System.out.println("Máximo: " + record.stream().mapToDouble(i -> i).max().getAsDouble());
     }
     
     public void min(List<Double> record){
-        double min = 0;
-
-        for(int i = 0; i < record.size(); i++){
-            if(min==0)
-                min = record.get(i);
-                
-            if(min>record.get(i))
-                min = record.get(i);            
-        }
-        
-        System.out.println("Minimo: " + min);
+        System.out.println("Mínimo: " + record.stream().mapToDouble(i -> i).min().getAsDouble());
     }
     
-    public void average(List<Double> record){
-        double promedio = 0;
-        
-        for(int i = 0; i < record.size(); i++){
-            promedio += record.get(i);
-        }
-        
-        System.out.println("Promedio: " + promedio/record.size());
+    public void average(List<Double> record){  
+    	System.out.println("Promedio: " + record.stream().mapToDouble(i -> i).average().getAsDouble());
     }
 }

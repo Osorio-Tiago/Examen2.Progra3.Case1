@@ -6,9 +6,9 @@ public class Forecast extends WeatherDataDecorator{
     
     //Atributos
     
-    private final List<Double> temperatureRecord = new ArrayList();
-    private final List<Double> humidityRecord = new ArrayList();
-    private final List<Double> barometricRecord = new ArrayList();
+    private final List<Double> temperatureRecord = new ArrayList<Double>();
+    private final List<Double> humidityRecord = new ArrayList<Double>();
+    private final List<Double> barometricRecord = new ArrayList<Double>();
     
     //Metodos
     
@@ -41,12 +41,9 @@ public class Forecast extends WeatherDataDecorator{
     }
     
     public double forecast(List<Double> record){
-        double pronostico = 0;
-        
-        for(int i = 0; i < record.size(); i++){
-            pronostico += record.get(i);
-        }
-        
-        return pronostico/record.size();
+        return record.stream().mapToDouble(i -> i).average().getAsDouble();
     }
+    
+    
 }
+   

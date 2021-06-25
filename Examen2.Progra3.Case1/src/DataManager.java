@@ -7,7 +7,7 @@ public class DataManager implements Subject {
     
     //Atributos
     
-    private final List<Observer> observers = new ArrayList();
+    private final List<Observer> observers = new ArrayList<Observer>();
 
     //Metodos 
     
