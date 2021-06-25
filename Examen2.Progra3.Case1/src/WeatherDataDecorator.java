@@ -1,7 +1,12 @@
 
 public class WeatherDataDecorator implements Observer{
 
-    
+/*
+ * La clase decorador al igual que la clase base WeatherData implementa los 
+ * metodos para poder hacer las modificaciones deseadas a las futuras clases 
+ * observadoras.
+ * 
+ */    
     private final Observer data;   
     
     //Metodos

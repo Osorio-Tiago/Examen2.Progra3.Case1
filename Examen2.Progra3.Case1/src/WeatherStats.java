@@ -3,15 +3,19 @@ import java.util.List;
 
 
 public class WeatherStats extends WeatherDataDecorator{
+	
+/*
+ * La clase WeatherStats es una clase observadora en la cual tomaremos
+ * la data observada y procedemos a aplicar cálculos debido a su estado mediante
+ * diferentes métodos.
+ */
+	
+
     
-    //Atributos
-    
-    private final List<Double> temperatureRecord = new ArrayList<Double>();
-    private final List<Double> humidityRecord = new ArrayList<Double>();
-    private final List<Double> barometricRecord = new ArrayList<Double>();
-    
-    //Metodos
-    
+    private final List<Double> temperatureInformation = new ArrayList<Double>();
+    private final List<Double> humidityInformation = new ArrayList<Double>();
+    private final List<Double> barometricInformation = new ArrayList<Double>();
+
     public WeatherStats(Observer data) {
         super(data);
     }
@@ -19,32 +23,34 @@ public class WeatherStats extends WeatherDataDecorator{
     @Override
     public void createFunctionality() {
         super.createFunctionality();
-        System.out.println("+===================+");
-        System.out.println("WeatherStats: ");
-        System.out.println("Estadisticas: ");
+        System.out.println("+=====+==================================+");
+        System.out.println("|Estadísticas Meteorológicas             |");
+        System.out.println("+=====+==================================+");    
+        System.out.println("|[1]- Información Temperatura:           ");
+        averageValue(temperatureInformation);
+        maximumValue(temperatureInformation);
+        minimumValue(temperatureInformation);
+        System.out.println("|________________________________________");
         
-        System.out.println("Temperatura ");
-        average(temperatureRecord);
-        max(temperatureRecord);
-        min(temperatureRecord);
+        System.out.println("|[2]- Humedad                            ");
+        averageValue(humidityInformation);
+        maximumValue(humidityInformation);
+        minimumValue(humidityInformation);
+        System.out.println("|________________________________________");
         
-        System.out.println("Humedad ");
-        average(humidityRecord);
-        max(humidityRecord);
-        min(humidityRecord);
-        
-        System.out.println("Presion Barometrica ");
-        average(barometricRecord);
-        max(barometricRecord);
-        min(barometricRecord);
+        System.out.println("|[3]- Presion Barometrica                ");
+        averageValue(barometricInformation);
+        maximumValue(barometricInformation);
+        minimumValue(barometricInformation);
+        System.out.println("|________________________________________ \n");
     }
 
     @Override
     public void update(double temperature, double humidity, double barometricPressure) {
         super.update(temperature, humidity, barometricPressure);
-        temperatureRecord.add(temperature);
-        humidityRecord.add(humidity);
-        barometricRecord.add(barometricPressure);
+        temperatureInformation.add(temperature);
+        humidityInformation.add(humidity);
+        barometricInformation.add(barometricPressure);
     }
     
     /*
@@ -53,15 +59,15 @@ public class WeatherStats extends WeatherDataDecorator{
      * Maximo - Minimo - Promedio
      */
     
-    public void max(List<Double> record){
+    public void maximumValue(List<Double> record){
     	System.out.println("Máximo: " + record.stream().mapToDouble(i -> i).max().getAsDouble());
     }
     
-    public void min(List<Double> record){
+    public void minimumValue(List<Double> record){
         System.out.println("Mínimo: " + record.stream().mapToDouble(i -> i).min().getAsDouble());
     }
     
-    public void average(List<Double> record){  
+    public void averageValue(List<Double> record){  
     	System.out.println("Promedio: " + record.stream().mapToDouble(i -> i).average().getAsDouble());
     }
 }

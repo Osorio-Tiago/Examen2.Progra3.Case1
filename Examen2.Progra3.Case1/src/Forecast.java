@@ -1,44 +1,52 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* La clase Forecast es una clase observadora en la cual tomaremos
+ * la data observada y procedemos a aplicar cálculos debido a su estado mediante
+ * diferentes métodos.
+ * */
 
 public class Forecast extends WeatherDataDecorator{
     
-    //Atributos
     
-    private final List<Double> temperatureRecord = new ArrayList<Double>();
-    private final List<Double> humidityRecord = new ArrayList<Double>();
-    private final List<Double> barometricRecord = new ArrayList<Double>();
+    private final List<Double>  estimatedTemperature = new ArrayList<Double>();
+    private final List<Double> estimatedHumidity = new ArrayList<Double>();
+    private final List<Double> estBarometricPressure = new ArrayList<Double>();
     
-    //Metodos
     
     public Forecast(Observer data) {
         super(data);
+    }
+    
+  
+    @Override
+    public void update(double temperature, double humidity, double barometricPressure) {
+        super.update(temperature, humidity, barometricPressure);
+        estimatedTemperature.add(temperature);
+        estimatedHumidity.add(humidity);
+        estBarometricPressure.add(barometricPressure);
     }
     
     @Override
     public void createFunctionality() {
         super.createFunctionality();
         System.out.println("\n");
-        System.out.println("+=====+==========================+");
-        System.out.println("Forecast: ");
-        System.out.println("Pronóstico: ");
-        
-        System.out.println("Temperatura: " + forecast(temperatureRecord) + "°C");       
-        
-        System.out.println("Humedad: " + forecast(humidityRecord) +" H");      
-     
-        System.out.println("Presion Barometrica: " + forecast(barometricRecord));
-        System.out.println("\n");
+        System.out.println("+=====+==================================+");
+        System.out.println("|Información Forecast:                   |");
+        System.out.println("+=====+==================================+");;
+        System.out.println("|Temperatura: " + forecast(estimatedTemperature) + "°C ");          
+        System.out.println("|Humedad: " + forecast(estimatedHumidity) +" H");      
+        System.out.println("|Presion Barometrica:" + forecast(estBarometricPressure));
+        System.out.println("+=====+==================================+");;
+        System.out.println("\n \n");
     }
 
-    @Override
-    public void update(double temperature, double humidity, double barometricPressure) {
-        super.update(temperature, humidity, barometricPressure);
-        temperatureRecord.add(temperature);
-        humidityRecord.add(humidity);
-        barometricRecord.add(barometricPressure);
-    }
+    
+ // En este caso el método forecast nos permite sacar un promedio
+ // de los reportes obtenidos en cada elementos característicos a observar. 
+ // manipulandolos con una lista.
+    
     
     public double forecast(List<Double> record){
         return record.stream().mapToDouble(i -> i).average().getAsDouble();
