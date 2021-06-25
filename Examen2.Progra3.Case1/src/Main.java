@@ -37,9 +37,9 @@ public class Main {
 	        System.out.println("               +======================+");
 	        System.out.println("\n");
 	        
-	        dataManager.notifyUpdate(32.30, 33.0, 30);
-	        dataManager.notifyUpdate(10, 17.20, 20);
-	        dataManager.notifyUpdate(9.95, 5.02, 10);
+	        dataManager.notifyUpdate(28, 25.5, 20);
+	        dataManager.notifyUpdate(15, 18, 20);
+	        dataManager.notifyUpdate(30, 15.5, 22.20);
 	        
 	        
 	        
@@ -53,9 +53,9 @@ public class Main {
 	        dataManager.attach(primerHibrido);
 	        dataManager.attach(segundoHibrido);
 	        
-	        dataManager.notifyUpdate(52.40, 53.0, 10);
-	        dataManager.notifyUpdate(30, 57.20, 20);
-	        dataManager.notifyUpdate(7.95, 7.02, 60);
+	        dataManager.notifyUpdate(42.50, 33.0, 30);
+	        dataManager.notifyUpdate(17, 43.60, 25);
+	        dataManager.notifyUpdate(24, 12.15, 40);
 	        
 	        System.out.println("*---------------------------------------------");
 	        
