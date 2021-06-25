@@ -12,8 +12,7 @@ public class CurrentConditions extends WeatherDataDecorator {
 	double humidity;
 	double barometricPressure;
 
-	// Metodos
-
+	
 	public CurrentConditions(Observer data) {
 		super(data);
 	}

@@ -10,13 +10,13 @@ public class WeatherStats extends WeatherDataDecorator{
  * diferentes métodos.
  */
 	
-    //Atributos
+
     
     private final List<Double> temperatureRecord = new ArrayList();
     private final List<Double> humidityRecord = new ArrayList();
     private final List<Double> barometricRecord = new ArrayList();
     
-    //Metodos
+
     
     public WeatherStats(Observer data) {
         super(data);
@@ -29,21 +29,21 @@ public class WeatherStats extends WeatherDataDecorator{
         System.out.println("|Estadísticas Meteorológicas             |");
         System.out.println("+=====+==================================+");    
         System.out.println("|[1]- Información Temperatura:           ");
-        average(temperatureRecord);
-        max(temperatureRecord);
-        min(temperatureRecord);
+        averageValue(temperatureRecord);
+        maximumValue(temperatureRecord);
+        minimumValue(temperatureRecord);
         System.out.println("|________________________________________");
         
         System.out.println("|[2]- Humedad                            ");
-        average(humidityRecord);
-        max(humidityRecord);
-        min(humidityRecord);
+        averageValue(humidityRecord);
+        maximumValue(humidityRecord);
+        minimumValue(humidityRecord);
         System.out.println("|________________________________________");
         
         System.out.println("|[3]- Presion Barometrica                ");
-        average(barometricRecord);
-        max(barometricRecord);
-        min(barometricRecord);
+        averageValue(barometricRecord);
+        maximumValue(barometricRecord);
+        minimumValue(barometricRecord);
         System.out.println("|________________________________________ \n");
     }
 
@@ -61,7 +61,7 @@ public class WeatherStats extends WeatherDataDecorator{
  * característica.
  * 
  */    
-    public void max(List<Double> record){
+    public void maximumValue(List<Double> record){
         double max = 0;
         
         for(int i = 0; i < record.size(); i++){
@@ -80,7 +80,7 @@ public class WeatherStats extends WeatherDataDecorator{
  * característica.
  * 
  */     
-    public void min(List<Double> record){
+    public void minimumValue(List<Double> record){
         double min = 0;
 
         for(int i = 0; i < record.size(); i++){
@@ -99,7 +99,7 @@ public class WeatherStats extends WeatherDataDecorator{
  * la componen en cada elemento característico.
  * 
  */     
-    public void average(List<Double> record){
+    public void averageValue(List<Double> record){
         double promedio = 0;
         
         for(int i = 0; i < record.size(); i++){

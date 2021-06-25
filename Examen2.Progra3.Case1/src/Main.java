@@ -67,7 +67,7 @@ public class Main {
 	        
 	        System.out.println("*---------------------------------------------\n");
 	        System.out.println("*****************************************");
-	        System.out.println("|Segundo Dispositivo Híbrido              |");
+	        System.out.println("|     Segundo Dispositivo Híbrido       |");
 	        System.out.println("*****************************************");
 	        segundoHibrido.createFunctionality();
 	    
